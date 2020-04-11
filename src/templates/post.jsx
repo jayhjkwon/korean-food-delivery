@@ -70,6 +70,12 @@ const ContentWrapper = styled.div`
     }
 `;
 
+const StyledSubtitle = styled.h2`
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+`;
+
 const Post = ({ data }) => {
     const { html, frontmatter, excerpt } = data.markdownRemark;
     const { title, tags, path } = frontmatter;
@@ -93,6 +99,13 @@ const Post = ({ data }) => {
                     <h1>{title}</h1>
                     <TagsBlock list={tags || []} />
                     <Content input={html} />
+
+                    {data.images.nodes && data.images.nodes.length > 0 && (
+                        <>
+                            <hr />
+                            <StyledSubtitle>참조 이미지</StyledSubtitle>
+                        </>
+                    )}
                 </ContentWrapper>
                 {data.images.nodes &&
                     data.images.nodes.map(image => {

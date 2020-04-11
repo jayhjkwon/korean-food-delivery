@@ -33,6 +33,8 @@ const Wrapper = styled.div`
     }
     h2 {
         margin-top: 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
     }
     h1,
     h2,

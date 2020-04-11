@@ -6,9 +6,6 @@ title: "도시락"
 subtitle: "족발/보쌈"
 published: true
 tags: ['족발', '보쌈']
-phone: "03-0233-0324"
-kakao: "dowha_kakao"
-available: "목요일 오후 5시 ~ 10시"
 ---
 
 - 모든 메뉴는 2~3인용 입니다

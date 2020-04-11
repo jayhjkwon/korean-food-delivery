@@ -21,7 +21,7 @@ const Nav = styled.nav`
         color: ${props => props.theme.colors.black.base};
         margin-left: 1.5rem;
         transition: all ${props => props.theme.transitions.default.duration};
-        &:first-child {
+        &:first-of-type {
             margin-left: 0;
         }
         &:hover {

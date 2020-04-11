@@ -71,7 +71,14 @@ const Index = ({ data }) => {
             <PostWrapper>
                 {edges.map(({ node }) => {
                     const { id, excerpt, frontmatter } = node;
-                    const { cover, path, title, date, subtitle } = frontmatter;
+                    const {
+                        cover,
+                        path,
+                        title,
+                        date,
+                        subtitle,
+                        tags,
+                    } = frontmatter;
                     return (
                         <PostList
                             key={id}
@@ -81,6 +88,7 @@ const Index = ({ data }) => {
                             date={date}
                             excerpt={excerpt}
                             subtitle={subtitle}
+                            tags={tags}
                         />
                     );
                 })}

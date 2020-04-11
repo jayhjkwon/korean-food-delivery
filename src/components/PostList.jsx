@@ -94,7 +94,7 @@ const Title = styled.h2`
     margin-bottom: 0.6rem;
 `;
 
-const PostList = ({ dummy, cover, path, title, subtitle }) => {
+const PostList = ({ dummy, cover, path, title, subtitle, tags }) => {
     return (
         <Wrapper dummy={dummy}>
             {cover && (
@@ -106,7 +106,8 @@ const PostList = ({ dummy, cover, path, title, subtitle }) => {
                 <StyledLink to={path}>
                     <Info>
                         <Title>{title}</Title>
-                        <span>{subtitle}</span>
+                        {subtitle && <div>{subtitle}</div>}
+                        {tags && <div>{tags.join(', ')}</div>}
                     </Info>
                 </StyledLink>
             )}
@@ -123,4 +124,5 @@ PostList.propTypes = {
     excerpt: PropTypes.string,
     title: PropTypes.string,
     subtitle: PropTypes.string,
+    tags: PropTypes.array,
 };

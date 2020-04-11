@@ -39,7 +39,7 @@ const Dummy = styled.div``;
 const NavBar = ({ showLogo = true }) => {
     const data = useStaticQuery(graphql`
         query {
-            logo: file(relativePath: { eq: "logo/logo.png" }) {
+            logo: file(relativePath: { eq: "logo/Original.png" }) {
                 childImageSharp {
                     fixed(height: 30) {
                         ...GatsbyImageSharpFixed_noBase64

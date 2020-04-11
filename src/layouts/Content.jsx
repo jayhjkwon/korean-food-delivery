@@ -15,9 +15,10 @@ const Wrapper = styled.div`
             padding: 0.2rem 0.5rem;
             margin: 0.5rem 0;
         }
+        color: #484848;
     }
     a:not(.gatsby-resp-image-link):not(.anchor) {
-        color: black;
+        color: #484848;
         box-shadow: inset 0 -2px 0 ${props => props.theme.colors.primary.base};
         border-bottom: 1px solid ${props => props.theme.colors.primary.base};
         transition: ${props => props.theme.transitions.default.transition};
@@ -33,7 +34,7 @@ const Wrapper = styled.div`
     }
     h2 {
         margin-top: 1rem;
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 600;
     }
     h1,
@@ -42,6 +43,7 @@ const Wrapper = styled.div`
     h4,
     h5,
     h6 {
+        color: #484848;
         display: inline-block;
         position: relative;
         a {
@@ -57,6 +59,9 @@ const Wrapper = styled.div`
                 opacity: 0.8;
             }
         }
+    }
+    div {
+        color: #484848;
     }
 `;
 

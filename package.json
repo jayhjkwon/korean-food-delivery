@@ -7,7 +7,7 @@
   "version": "0.0.7",
   "repository": {
     "type": "git",
-    "url": "https://github.com/justinformentin/gatsby-v2-tutorial-starter"
+    "url": "https://github.com/jayhjkwon/korean-food-delivery"
   },
   "scripts": {
     "dev": "gatsby develop",

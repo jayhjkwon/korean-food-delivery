@@ -3,8 +3,8 @@ module.exports = {
     title: '멜번의 배달 가능한 한국 식당들입니다', // Navigation and Site Title
     titleAlt: '멜번의 배달 가능한 한국 식당들입니다', // Title for JSONLD
     description: '멜번의 배달 가능한 한국 식당들입니다',
-    url: 'https://gatsby-tutorial-starter.netlify.com', // Domain of your site. No trailing slash!
-    siteUrl: 'https://gatsby-tutorial-starter.netlify.com', // url + pathPrefix
+    url: 'https://hopeful-panini-62da32.netlify.com/', // Domain of your site. No trailing slash!
+    siteUrl: 'https://hopeful-panini-62da32.netlify.com/', // url + pathPrefix
     siteLanguage: 'en', // Language Tag on <html> element
     logo: 'static/logo/logo.png', // Used for SEO
     banner: 'static/logo/banner.png',

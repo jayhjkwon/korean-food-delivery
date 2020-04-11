@@ -23,11 +23,16 @@ const SEO = ({ title, description, banner, pathname, article }) => (
                     twitter,
                 },
             },
+            heroPhoto: {
+                childImageSharp: {
+                    fixed: { src },
+                },
+            },
         }) => {
             const seo = {
                 title: title || defaultTitle,
                 description: defaultDescription || description,
-                image: `${siteUrl}${banner || defaultBanner}`,
+                image: `${siteUrl}${src || banner || defaultBanner}`,
                 url: `${siteUrl}${pathname || '/'}`,
             };
             const realPrefix = pathPrefix === '/' ? '' : pathPrefix;
@@ -159,6 +164,13 @@ const query = graphql`
                 defaultDescription: description
                 defaultBanner: banner
                 twitter
+            }
+        }
+        heroPhoto: file(relativePath: { eq: "logo/logo.png" }) {
+            childImageSharp {
+                fixed(height: 50) {
+                    src
+                }
             }
         }
     }

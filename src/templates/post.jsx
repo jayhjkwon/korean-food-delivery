@@ -72,8 +72,12 @@ const ContentWrapper = styled.div`
 
 const StyledSubtitle = styled.h2`
     margin-top: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
+`;
+
+const StyledImage = styled(Img)`
+    margin: 1rem 0;
 `;
 
 const Post = ({ data }) => {
@@ -99,7 +103,6 @@ const Post = ({ data }) => {
                     <h1>{title}</h1>
                     <TagsBlock list={tags || []} />
                     <Content input={html} />
-
                     {data.images.nodes && data.images.nodes.length > 0 && (
                         <>
                             <hr />
@@ -110,7 +113,7 @@ const Post = ({ data }) => {
                 {data.images.nodes &&
                     data.images.nodes.map(image => {
                         const fluid = image.childImageSharp.fluid;
-                        return <Img key={fluid.src} fluid={fluid} />;
+                        return <StyledImage key={fluid.src} fluid={fluid} />;
                     })}
             </Wrapper>
         </Layout>

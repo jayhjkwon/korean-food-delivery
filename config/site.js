@@ -1,8 +1,8 @@
 module.exports = {
     pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
-    title: '멜번의 배달 가능한 한국 식당들입니다', // Navigation and Site Title
-    titleAlt: '멜번의 배달 가능한 한국 식당들입니다', // Title for JSONLD
-    description: '멜번의 배달 가능한 한국 식당들입니다',
+    title: '내일 뭐먹지? - 멜번의 배달 가능한 한국 식당들입니다', // Navigation and Site Title
+    titleAlt: '내일 뭐먹지? - 멜번의 배달 가능한 한국 식당들입니다', // Title for JSONLD
+    description: '내일 뭐먹지? - 멜번의 배달 가능한 한국 식당들입니다',
     url: 'https://hopeful-panini-62da32.netlify.com/', // Domain of your site. No trailing slash!
     siteUrl: 'https://hopeful-panini-62da32.netlify.com/', // url + pathPrefix
     siteLanguage: 'en', // Language Tag on <html> element

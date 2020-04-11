@@ -13,7 +13,7 @@ const Wrapper = styled.article`
     box-shadow: ${props => props.theme.shadow.feature.small.default};
     transition: ${props => props.theme.transitions.boom.transition};
     width: 100%;
-    height: ${props => (props.dummy ? '0' : '17rem')};
+    height: ${props => (props.dummy ? '0' : '15rem')};
     opacity: ${props => (props.dummy ? 0 : 1)};
 
     &:hover {

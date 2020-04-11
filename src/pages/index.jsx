@@ -64,7 +64,7 @@ const Index = ({ data }) => {
         allMarkdownRemark: { edges },
     } = data;
     return (
-        <Layout>
+        <Layout showLogo={false}>
             <Helmet title={'Home Page'} />
             <Header cover={heroPhoto.childImageSharp.fixed}>
                 배달 가능한 한국 식당들을 모두 모았습니다

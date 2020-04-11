@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import { Layout, Container, Content } from 'layouts';
+import { Layout, Content } from 'layouts';
 import { TagsBlock, SEO } from 'components';
 import '../styles/prism';
 
@@ -44,7 +44,7 @@ export const query = graphql`
 
 const Wrapper = styled.div`
     padding: 3rem 0 0 0;
-    max-width: 1000px;
+    max-width: ${props => props.theme.maxWidth};
     margin: 0 auto;
 `;
 
@@ -54,7 +54,7 @@ const HeroImageContainer = styled.div`
 `;
 
 const HeroImageWrapper = styled.div`
-    max-width: 1000px;
+    max-width: ${props => props.theme.maxWidth};
     margin: 0 auto;
     height: 300px;
     overflow: hidden;

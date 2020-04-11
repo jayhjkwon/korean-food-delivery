@@ -9,7 +9,7 @@ import { NavBar, Footer } from 'layouts';
 import theme from '../../config/theme';
 import headroom from '../styles/headroom';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, showLogo = true }) => (
     <ThemeProvider theme={theme}>
         <Fragment>
             <Global
@@ -58,7 +58,7 @@ const Layout = ({ children }) => (
                 `}
             />
             <SEO />
-            <NavBar />
+            <NavBar showLogo={showLogo} />
             {children}
             <Footer />
         </Fragment>
@@ -69,4 +69,5 @@ export default Layout;
 
 Layout.propTypes = {
     children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
+    showLogo: PropTypes.bool,
 };

@@ -1,9 +1,8 @@
 {
-  "name": "gatsby-tutorial-starter",
-  "author": "Justin Formentin",
-  "title": "Gatsby V2 Tutorial Starter",
-  "description": "My Blog",
-  "homepage": "https://gatsby-tutorial-starter.netlify.com",
+  "name": "korean-food-delivery",
+  "author": "Jay Kwon",
+  "title": "Korean Food Delivery",
+  "description": "Korean Food Delivery",
   "license": "MIT",
   "version": "0.0.7",
   "repository": {
@@ -11,7 +10,7 @@
     "url": "https://github.com/justinformentin/gatsby-v2-tutorial-starter"
   },
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "rm -rf public && rm -rf .cache",
@@ -19,7 +18,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "lint-errors": "eslint src/**/*.{js,jsx} --quiet",
     "lint": "eslint src/**/*.{js,jsx}",
-    "start": "npm run develop"
+    "start": "npm run dev"
   },
   "dependencies": {
     "@babel/core": "^7.6.0",
@@ -65,11 +64,5 @@
     "lighthouse": "^3.2.1",
     "prettier": "^1.18.2"
   },
-  "keywords": [
-    "justin formentin",
-    "personal blog",
-    "tutorial",
-    "gatsby",
-    "emotion"
-  ]
+  "keywords": []
 }

@@ -1,99 +1,111 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import { Layout, Container, Content } from 'layouts';
-import { TagsBlock, Header, SEO } from 'components';
+import { TagsBlock, SEO } from 'components';
 import '../styles/prism';
 
-const SuggestionBar = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  background: ${props => props.theme.colors.white.light};
-  box-shadow: ${props => props.theme.shadow.suggestion};
-`;
-const PostSuggestion = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 1rem 3rem 0 3rem;
+export const query = graphql`
+    query($pathSlug: String!, $folder: String!) {
+        markdownRemark(frontmatter: { path: { eq: $pathSlug } }) {
+            html
+            excerpt
+            frontmatter {
+                title
+                tags
+                cover {
+                    childImageSharp {
+                        fluid(maxWidth: 1000, quality: 100) {
+                            ...GatsbyImageSharpFluid_noBase64
+                        }
+                    }
+                }
+            }
+        }
+        images: allFile(
+            filter: {
+                base: { regex: "/menu/" }
+                extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+                relativeDirectory: { eq: $folder }
+            }
+        ) {
+            nodes {
+                childImageSharp {
+                    fluid(maxWidth: 1000, quality: 100) {
+                        ...GatsbyImageSharpFluid_noBase64
+                    }
+                }
+            }
+        }
+    }
 `;
 
-const Post = ({ data, pageContext }) => {
-  const { next, prev } = pageContext;
-  const {html, frontmatter, excerpt } = data.markdownRemark
-  const {date, title, tags, path, description} = frontmatter
-  const image = frontmatter.cover.childImageSharp.fluid;
+const Wrapper = styled.div`
+    padding: 3rem 0 0 0;
+    max-width: 1000px;
+    margin: 0 auto;
+`;
 
-  return (
-    <Layout>
-      <SEO
-        title={title}
-        description={description || excerpt || ' '}
-        banner={image}
-        pathname={path}
-        article
-      />
-      <Header title={title} date={date} cover={image} />
-      <Container>
-        <Content input={html} />
-        <TagsBlock list={tags || []} />
-      </Container>
-      <SuggestionBar>
-        <PostSuggestion>
-          {prev && (
-            <Link to={prev.frontmatter.path}>
-              Previous
-              <h3>{prev.frontmatter.title}</h3>
-            </Link>
-          )}
-        </PostSuggestion>
-        <PostSuggestion>
-          {next && (
-            <Link to={next.frontmatter.path}>
-              Next
-              <h3>{next.frontmatter.title}</h3>
-            </Link>
-          )}
-        </PostSuggestion>
-      </SuggestionBar>
-    </Layout>
-  );
+const HeroImageContainer = styled.div`
+    background-color: ${props => props.theme.colors.black.base};
+    margin: 4rem 0 0 0;
+`;
+
+const HeroImageWrapper = styled.div`
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 300px;
+    overflow: hidden;
+    @media (min-width: ${props => props.theme.breakpoints.m}) {
+        height: 500px;
+    }
+`;
+
+const ContentWrapper = styled.div`
+    padding: 0 1rem;
+    @media (min-width: ${props => props.theme.breakpoints.m}) {
+        padding: 0;
+    }
+`;
+
+const Post = ({ data }) => {
+    const { html, frontmatter, excerpt } = data.markdownRemark;
+    const { title, tags, path } = frontmatter;
+    const image = frontmatter.cover.childImageSharp.fluid;
+    return (
+        <Layout>
+            <SEO
+                title={title}
+                description={excerpt || ' '}
+                banner={frontmatter.cover.childImageSharp.fluid.src}
+                pathname={path}
+                article
+            />
+            <HeroImageContainer>
+                <HeroImageWrapper>
+                    <Img fluid={image} />
+                </HeroImageWrapper>
+            </HeroImageContainer>
+            <Wrapper>
+                <ContentWrapper>
+                    <h1>{title}</h1>
+                    <TagsBlock list={tags || []} />
+                    <Content input={html} />
+                </ContentWrapper>
+                {data.images.nodes &&
+                    data.images.nodes.map(image => {
+                        const fluid = image.childImageSharp.fluid;
+                        return <Img key={fluid.src} fluid={fluid} />;
+                    })}
+            </Wrapper>
+        </Layout>
+    );
 };
 
 export default Post;
 
 Post.propTypes = {
-  pageContext: PropTypes.shape({
-    prev: PropTypes.object,
-    next: PropTypes.object,
-  }).isRequired,
-  data: PropTypes.object.isRequired,
+    data: PropTypes.object.isRequired,
 };
-
-export const query = graphql`
-  query($pathSlug: String!) {
-    markdownRemark(frontmatter: { path: { eq: $pathSlug } }) {
-      html
-      frontmatter {
-        date
-        title
-        tags
-        cover {
-          childImageSharp {
-            fluid(
-              maxWidth: 1920
-              quality: 90
-              duotone: { highlight: "#386eee", shadow: "#2323be", opacity: 60 }
-            ) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-            resize(width: 1200, quality: 90) {
-              src
-            }
-          }
-        }
-      }
-    }
-  }
-`;

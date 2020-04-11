@@ -4,74 +4,80 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.header`
-  -webkit-clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
-  clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
-    -webkit-clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
-    clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
-  }
-  background: ${props => props.theme.gradient.rightToLeft};
-  height: 300px;
-  @media (max-width: ${props => props.theme.breakpoints.m}) {
-    height: 300px;
-  }
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
-    height: 275px;
-  }
-  position: relative;
-  overflow: hidden;
+    margin: 5rem 0 2rem 0;
+    padding: 4rem 0 1rem 0;
+    @media (min-width: ${props => props.theme.breakpoints.m}) {
+        padding: 8rem 0 4rem 0;
+    }
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: middle;
 `;
 
 const Text = styled.div`
-  color: ${props => props.theme.colors.white.base};
-  z-index: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 100%;
-  max-width: ${props => props.theme.layout.base};
-  padding: 0 2rem;
-  margin-bottom: 3rem;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+`;
+
+const Title = styled.h1`
+    line-height: 1.3;
 `;
 
 const Subtitle = styled.p`
-  max-width: 650px;
-  color: ${props => props.theme.colors.white.light};
+    margin: 4rem auto 0;
+    max-width: 450px;
+    color: ${props => props.theme.colors.black.light};
+    font-size: 0.8rem;
+    @media (min-width: ${props => props.theme.breakpoints.m}) {
+        margin: 6rem auto 0;
+    }
 `;
 
-const Header = ({ children, title, date, cover }) => (
-  <Wrapper>
-    <Img fluid={cover || {} || [] || ''} />
-    <Text>
-      <h1>{title}</h1>
-      <h3>{date}</h3>
+const CoverWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
 
-      {children && <Subtitle>{children}</Subtitle>}
-    </Text>
-  </Wrapper>
+const Header = ({ title, cover }) => (
+    <Wrapper>
+        {cover && (
+            <CoverWrapper>
+                <Img fixed={cover} />
+            </CoverWrapper>
+        )}
+        <Text>
+            <Title>{title}</Title>
+            <Subtitle>
+                여기저기 흩어져있는 배달 가능한 한국 식당들을 모두 모았습니다.
+                정보에 오류가 있거나 변경된 부분이 있으면 알려주세요, 바로
+                업데이트 해드리겠습니다.
+            </Subtitle>
+        </Text>
+    </Wrapper>
 );
 
 export default Header;
 
 Header.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
-  cover: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  date: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
-  title: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object,
-    PropTypes.bool,
-  ]),
+    children: PropTypes.oneOfType([PropTypes.node, PropTypes.bool]),
+    cover: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+    title: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object,
+        PropTypes.bool,
+    ]),
 };
 
 Header.defaultProps = {
-  children: false,
-  cover: false,
-  date: false,
-  title: false,
+    children: false,
+    cover: false,
+    title: false,
 };

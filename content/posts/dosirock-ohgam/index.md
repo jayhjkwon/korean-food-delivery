@@ -3,7 +3,6 @@ path: "/dosirock-ohgam"
 folder: "dosirock-ohgam"
 cover: "./main.jpeg"
 title: "도시락 & 오감"
-subtitle: "족발/보쌈"
 published: true
 tags: ["족발", "보쌈", "대창"]
 ---

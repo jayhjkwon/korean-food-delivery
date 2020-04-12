@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
+import orderBy from 'lodash/orderBy';
 import { Layout, Content } from 'layouts';
 import { TagsBlock, SEO } from 'components';
 import '../styles/prism';
@@ -84,6 +85,14 @@ const Post = ({ data }) => {
     const { html, frontmatter, excerpt } = data.markdownRemark;
     const { title, tags, path } = frontmatter;
     const image = frontmatter.cover.childImageSharp.fluid;
+    let images = [];
+    if (data.images.nodes && data.images.nodes.length > 0) {
+        images = orderBy(
+            data.images.nodes,
+            ['childImageSharp.fluid.src'],
+            ['asc']
+        );
+    }
     return (
         <Layout>
             <SEO
@@ -103,18 +112,17 @@ const Post = ({ data }) => {
                     <h1>{title}</h1>
                     <TagsBlock list={tags || []} />
                     <Content input={html} />
-                    {data.images.nodes && data.images.nodes.length > 0 && (
+                    {images.length > 0 && (
                         <>
                             <hr />
                             <StyledSubtitle>참조 이미지</StyledSubtitle>
                         </>
                     )}
                 </ContentWrapper>
-                {data.images.nodes &&
-                    data.images.nodes.map(image => {
-                        const fluid = image.childImageSharp.fluid;
-                        return <StyledImage key={fluid.src} fluid={fluid} />;
-                    })}
+                {images.map(image => {
+                    const fluid = image.childImageSharp.fluid;
+                    return <StyledImage key={fluid.src} fluid={fluid} />;
+                })}
             </Wrapper>
         </Layout>
     );

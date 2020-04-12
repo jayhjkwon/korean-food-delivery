@@ -1,0 +1,27 @@
+---
+path: "/chickilia"
+folder: "chickilia"
+cover: "./main.jpeg"
+title: "치키리아"
+published: true
+tags: ["치킨", "갈릭치킨", "랩", "소불고기"] 
+---
+
+## 배달
+- 우버잇츠, 이지, 더대시 앱으로 배달가능
+---
+
+## 픽업
+- 89 Peel street, West Melbourne
+---
+
+## 연락처
+- ☎️ 03)93285828
+- 인스타그램 :Chickiliamelbournecity
+
+
+---
+
+## 주문 방법
+- 전화 주문
+

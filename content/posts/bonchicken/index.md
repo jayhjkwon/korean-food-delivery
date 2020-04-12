@@ -8,22 +8,23 @@ tags: ["치킨"]
 ---
 
 ## 배달
+- 카네기 배달(이지와 우버잇츠)
 - 글렌웨이버리 배달은 5-10시까지
 
 ---
 
 ## 픽업 시간
-- 장소:  91 Kingsway, Glen Waverley VIC 3150, 
-121 Koornang Rd, Carnegie VIC 3163
+- 글랜:  91 Kingsway, Glen Waverley 
+- 카네기:  121 Koornang Rd, Carnegie
 
 ---
 
 ## 연락처
-- ☎️0490022271
-- Instagram: woori_melbourne
-- Kakao: woorimelbourne 
+- ☎️ 글랜:(03) 9561 6664
+- ☎️ 카네기:(03) 9563 6231
+- 웹사이트: http://www.bonchicken.com/
 
 ---
 
 ## 주문 방법
-- 자세한 주문 방법은 아래 그림 참조
+- 전화주문

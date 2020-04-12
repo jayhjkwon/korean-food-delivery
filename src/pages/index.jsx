@@ -27,7 +27,6 @@ export const query = graphql`
                         title
                         path
                         tags
-                        subtitle
                         cover {
                             childImageSharp {
                                 fluid(maxWidth: 1000, quality: 100) {
@@ -71,14 +70,7 @@ const Index = ({ data }) => {
             <PostWrapper>
                 {edges.map(({ node }) => {
                     const { id, excerpt, frontmatter } = node;
-                    const {
-                        cover,
-                        path,
-                        title,
-                        date,
-                        subtitle,
-                        tags,
-                    } = frontmatter;
+                    const { cover, path, title, date, tags } = frontmatter;
                     return (
                         <PostList
                             key={id}
@@ -87,7 +79,6 @@ const Index = ({ data }) => {
                             title={title}
                             date={date}
                             excerpt={excerpt}
-                            subtitle={subtitle}
                             tags={tags}
                         />
                     );

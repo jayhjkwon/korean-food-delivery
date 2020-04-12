@@ -14,6 +14,7 @@ exports.createPages = ({ graphql, actions }) => {
                     query {
                         allMarkdownRemark(
                             sort: { order: ASC, fields: [frontmatter___title] }
+                            filter: { frontmatter: { published: { eq: true } } }
                         ) {
                             edges {
                                 node {

@@ -48,7 +48,7 @@ const About = ({ data }) => {
                     </p>
                     <p>
                         &quot;내일 뭐먹지?&quot;에 홍보를 하고자 하시는 분들은
-                        아래의 내용을 포함하여 nicekhj@gmail.com으로 이메일을
+                        아래의 내용을 포함하여 info.kfood@gmail.com으로 이메일을
                         보내주시면 가능한 빠른 시간내에 올려드리겠습니다.
                     </p>
                     <p>

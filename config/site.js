@@ -4,8 +4,8 @@ module.exports = {
     titleAlt: '내일 뭐먹지? - 멜번의 배달 가능한 한국 식당들입니다', // Title for JSONLD
     description:
         '멜번의 배달 가능한 한국 음식점, 한국 슈퍼마켓, 한국 제품 공동 구매 이벤트들을 한자리에서 만나볼 수 있습니다.',
-    url: 'https://kfood.netlify.com/', // Domain of your site. No trailing slash!
-    siteUrl: 'https://kfood.netlify.com/', // url + pathPrefix
+    url: 'http://k-food.com.au/', // Domain of your site. No trailing slash!
+    siteUrl: 'http://k-food.com.au/', // url + pathPrefix
     siteLanguage: 'en', // Language Tag on <html> element
     logo: 'static/logo/logo.png', // Used for SEO
     banner: 'static/logo/logo.png',

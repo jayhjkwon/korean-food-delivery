@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
+import { Container } from '../layouts';
 
 const Wrapper = styled.footer`
     margin: 8rem 0 0 0;
@@ -25,9 +26,11 @@ const Text = styled.div`
 
 const Footer = () => (
     <Wrapper>
-        <Text>
-            <Link to="/about">About Us</Link>
-        </Text>
+        <Container>
+            <Text>
+                <Link to="/about">포스팅 요청</Link>
+            </Text>
+        </Container>
     </Wrapper>
 );
 export default Footer;

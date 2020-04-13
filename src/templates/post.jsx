@@ -92,8 +92,8 @@ const Post = ({ data }) => {
             ['childImageSharp.fluid.src'],
             ['asc']
         );
-        images = [frontmatter.cover, ...images];
     }
+    images = [frontmatter.cover, ...images];
     return (
         <Layout>
             <SEO

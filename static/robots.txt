@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: */tags/
 
-sitemap: http://k-food.com.au/sitemap.xml
+sitemap: https://k-food.com.au/sitemap.xml

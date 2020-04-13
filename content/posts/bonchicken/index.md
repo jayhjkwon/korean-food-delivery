@@ -7,15 +7,8 @@ published: true
 tags: ["치킨"]
 ---
 
-## 배달
-- 카네기 배달(이지와 우버잇츠)
-- 글렌웨이버리 배달은 5-10시까지
-
----
-
-## 픽업 시간
-- 글랜:  91 Kingsway, Glen Waverley 
-- 카네기:  121 Koornang Rd, Carnegie
+## 주문
+- 전화주문
 
 ---
 
@@ -26,5 +19,12 @@ tags: ["치킨"]
 
 ---
 
-## 주문 방법
-- 전화주문
+## 배달
+- 카네기 배달(이지와 우버잇츠)
+- 글렌웨이버리 배달은 5-10시까지
+
+---
+
+## 픽업
+- 글렌:  91 Kingsway, Glen Waverley 
+- 카네기:  121 Koornang Rd, Carnegie

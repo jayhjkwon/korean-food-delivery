@@ -166,7 +166,7 @@ const query = graphql`
                 twitter
             }
         }
-        heroPhoto: file(relativePath: { eq: "logo/Original.png" }) {
+        heroPhoto: file(relativePath: { eq: "logo/logo.png" }) {
             childImageSharp {
                 fixed(height: 50) {
                     src

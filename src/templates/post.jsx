@@ -51,7 +51,7 @@ const Wrapper = styled.div`
 
 const HeroImageContainer = styled.div`
     background-color: ${props => props.theme.colors.black.base};
-    margin: 4rem 0 0 0;
+    margin: 5.4rem 0 0 0;
 `;
 
 const HeroImageWrapper = styled.div`

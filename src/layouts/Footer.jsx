@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const Wrapper = styled.footer`
-    margin: 3rem 0 0 0;
+    margin: 8rem 0 0 0;
     position: relative;
     padding: 3rem 0;
     bottom: 0;
@@ -10,7 +10,7 @@ const Wrapper = styled.footer`
     font-family: ${props => props.theme.fontFamily.body};
     font-weight: 500;
     @media (min-width: ${props => props.theme.breakpoints.s}) {
-        margin: 5rem 0 0 0;
+        margin: 10rem 0 0 0;
     }
 `;
 

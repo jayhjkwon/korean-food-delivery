@@ -27,10 +27,6 @@ const Text = styled.div`
 `;
 
 const Title = styled.h1`
-    line-height: 1.3;
-`;
-
-const Subtitle = styled.p`
     margin: 4rem auto 0;
     max-width: 450px;
     color: ${props => props.theme.colors.black.light};
@@ -46,7 +42,7 @@ const CoverWrapper = styled.div`
     align-items: center;
 `;
 
-const Header = ({ title, cover }) => (
+const Header = ({ title, cover, showTitle = true }) => (
     <Wrapper>
         {cover && (
             <CoverWrapper>
@@ -54,12 +50,14 @@ const Header = ({ title, cover }) => (
             </CoverWrapper>
         )}
         <Text>
-            <Title>{title}</Title>
-            <Subtitle>
-                여기저기 흩어져있는 배달 가능한 한국 식당들을 모두 모았습니다.
-                정보에 오류가 있거나 변경된 부분이 있으면 알려주세요, 바로
-                업데이트 해드리겠습니다.
-            </Subtitle>
+            {showTitle &&
+                (title || (
+                    <Title>
+                        여기저기 흩어져있는 배달 가능한 한국 식당들을 모두
+                        모았습니다. 정보에 오류가 있거나 변경된 부분이 있으면
+                        알려주세요, 바로 업데이트 해드리겠습니다.
+                    </Title>
+                ))}
         </Text>
     </Wrapper>
 );
@@ -74,6 +72,7 @@ Header.propTypes = {
         PropTypes.object,
         PropTypes.bool,
     ]),
+    showTitle: PropTypes.bool,
 };
 
 Header.defaultProps = {

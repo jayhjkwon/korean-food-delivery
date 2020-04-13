@@ -26,10 +26,7 @@ const Text = styled.div`
 const Footer = () => (
     <Wrapper>
         <Text>
-            <Link to="/about">
-                이메일을 보내주시면 최대한 빠른 시간내에 포스팅 해드리도록
-                하겠습니다.
-            </Link>
+            <Link to="/about">About Us</Link>
         </Text>
     </Wrapper>
 );

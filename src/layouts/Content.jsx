@@ -18,15 +18,10 @@ const Wrapper = styled.div`
         color: #484848;
     }
     a:not(.gatsby-resp-image-link):not(.anchor) {
-        color: #484848;
-        box-shadow: inset 0 -1px 0 ${props => props.theme.colors.primary.base};
-        border-bottom: 1px solid ${props => props.theme.colors.primary.base};
-        transition: ${props => props.theme.transitions.default.transition};
-        text-decoration: none;
+        color: ${props => props.theme.colors.link.base};
         &:hover,
         &:focus {
-            background: ${props => props.theme.colors.primary.base};
-            color: black;
+            border-bottom: solid 1px ${props => props.theme.colors.link.base};
         }
     }
     h1 {

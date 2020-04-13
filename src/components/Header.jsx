@@ -30,11 +30,18 @@ const Text = styled.div`
 const Title = styled.h1`
     margin: 4rem auto 0;
     line-height: 1.5;
-    max-width: 450px;
+    max-width: 330px;
     color: ${props => props.theme.colors.black.light};
     font-size: 0.8rem;
     @media (min-width: ${props => props.theme.breakpoints.m}) {
         margin: 6rem auto 0;
+    }
+    a:not(.gatsby-resp-image-link):not(.anchor) {
+        color: ${props => props.theme.colors.link.base};
+        &:hover,
+        &:focus {
+            border-bottom: solid 1px ${props => props.theme.colors.link.base};
+        }
     }
 `;
 
@@ -60,7 +67,6 @@ const Header = ({ title, cover, showTitle = true }) => (
                         <Link to="/about">
                             정보에 오류가 있거나 변경된 부분이 있으면 알려주세요
                         </Link>
-                        , 바로 업데이트 해드리겠습니다.
                     </Title>
                 ))}
         </Text>

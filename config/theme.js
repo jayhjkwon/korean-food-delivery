@@ -19,6 +19,9 @@ export const colors = {
         light: '#3e5fbc',
         dark: '#FF5A5F',
     },
+    link: {
+        base: '#008489',
+    },
 };
 
 export const shadow = {

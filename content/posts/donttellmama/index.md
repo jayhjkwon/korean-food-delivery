@@ -16,8 +16,8 @@ tags: ["감자탕", "치킨", "짬뽕탕", "닭똥집", "부대찌개"]
 ---
 
 ## 연락처
-- ☎️ 03 9848 2268
-- 카카오톡: donttellmamashh
+- ☎️ <a href="tel:0398482268">03 9848 2268</a>
+- 카톡: donttellmamashh
 - 주소: 751-753 Doncaster Rd. Doncaster 3108
 - 인스타그램: https://www.instagram.com/donttellmama_shh/
 

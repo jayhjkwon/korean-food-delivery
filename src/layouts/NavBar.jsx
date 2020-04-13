@@ -50,7 +50,7 @@ const NavBar = ({ showLogo = true }) => {
     `);
     const logo = data.logo.childImageSharp.fixed;
     return (
-        <Headroom calcHeightOnResize style={{ padding: '1rem' }}>
+        <Headroom calcHeightOnResize style={{ padding: '1.8rem' }}>
             <Wrapper>
                 <Nav>
                     {showLogo ? (

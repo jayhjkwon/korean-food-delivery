@@ -44,7 +44,7 @@ export const query = graphql`
 
 const PostWrapper = styled.div`
     max-width: ${props => props.theme.maxWidth};
-    margin: 4rem auto 1rem;
+    margin: 5.4rem auto 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

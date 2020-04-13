@@ -112,6 +112,7 @@ const Post = ({ data }) => {
                 <ContentWrapper>
                     <h1>{title}</h1>
                     <TagsBlock list={tags || []} />
+                    <hr />
                     <Content input={html} />
                     {images.length > 0 && (
                         <>

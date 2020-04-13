@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: */tags/
 
-sitemap: https://hopeful-panini-62da32.netlify.com/sitemap.xml
+sitemap: https://kfood.netlify.com/sitemap.xml

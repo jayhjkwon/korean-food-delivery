@@ -64,7 +64,7 @@ const Index = ({ data }) => {
     } = data;
     return (
         <Layout showLogo={false}>
-            <Helmet title={'Home Page'} />
+            <Helmet title={'내일 뭐먹지'} />
             <Header cover={heroPhoto.childImageSharp.fixed} />
             <PostWrapper>
                 {edges.map(({ node }) => {

@@ -8,13 +8,28 @@ tags: ["당일배달", "치즈케익", "세끼배달", "갈비찜", "보쌈"]
 ---
 
 ## 주문
-- ☎️0388067439, 0425853760
+- 전화 주문
 
+---
+## 연락처
+- ☎️ <a href="tel:0388067439">(03)88067439</a>
+- ☎️ <a href="tel:0425853760">0425853760</a>
 ---
 
 ## 배달
+- 세트메뉴 주문시 무료 배달
+- 화요일(일요일) : Box hill, Doncaster, Ringwood, Burwood, Blackburn, Vermont, Balwyn, Surrey Hills
+- 수요일 : Glen waverley, Mount Waverley, Ashwood, Chadstone, Malvern, Clayton, Springvale, Noble park, Keysborough, Bentleigh
+- 목요일 : Wheelers Hill, Mulgrave, Rowville, Wantirna, Knoxfield, Boronia, Bayswater
+- 금요일 : Dandenone, Endeavour Hills, Narre Warren, Berwick, Cranbourne, Clayde
+- 토요일 : Williamstown, Point Cook, Altona, Laverton, Hoppers clossing, Weeribee 
+- 김치찜과 고구마케익이 시간이 좀 걸려서 주문은 선정지역 전날까지 주문주세요. 
 
-- 모든 메뉴는 당일 배달 가능하고요, 치즈케익만 하루 전날 주문해 주시면 감사하겠습니다.
-- $50 이상 구매 고객에게 무료 배달입니다
-- 20km 이내 지역만 제한한 점 양해 부탁드립니다
+---
 
+## 메뉴
+- 돼지고기 김치찜 1 백짬뽕1 소불고기1 고구마케익 $60
+- 백짬뽕2 소불고기2 고구마케익 $60
+- 돼지고기 김치찜1 백짬뽕2 소불고기 고구마케익 $70
+- 돼지고기 김치찜2 백짬뽕2 고구마케익 $80
+- 돼지고기 김치찜1 백짬뽕2 소불고기2 고구마케익 $80

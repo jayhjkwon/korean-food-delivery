@@ -4,7 +4,7 @@ folder: "dohwa"
 cover: "./main.jpg"
 title: "도화"
 published: true
-tags: ["당일배달", "치즈케익", "세끼배달", "갈비찜", "보쌈"]
+tags: ["치즈케익", "세끼배달", "갈비찜", "보쌈"]
 ---
 
 ## 주문

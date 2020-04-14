@@ -166,9 +166,9 @@ const query = graphql`
                 twitter
             }
         }
-        heroPhoto: file(relativePath: { eq: "logo/logo.png" }) {
+        heroPhoto: file(relativePath: { eq: "logo/banner_facebook.jpg" }) {
             childImageSharp {
-                fixed(height: 50) {
+                fixed {
                     src
                 }
             }

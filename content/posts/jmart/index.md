@@ -4,7 +4,7 @@ folder: "jmart"
 cover: "./main.png"
 title: "제이마트"
 published: true
-tags: ["한국식품","시드니 야채"]
+tags: ["한국식품","싱싱한 야채"]
 ---
 
 ## 주문
@@ -13,6 +13,7 @@ tags: ["한국식품","시드니 야채"]
 ---
 
 ## 연락처
+- 251 Dorset Rd, Boronia VIC 3155
 - ☎️<a href="tel:97620057">97620057</a> 
 
 ---

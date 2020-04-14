@@ -25,7 +25,7 @@ const SEO = ({ title, description, banner, pathname, article }) => (
             },
             heroPhoto: {
                 childImageSharp: {
-                    fixed: { src },
+                    fluid: { src },
                 },
             },
         }) => {
@@ -166,9 +166,9 @@ const query = graphql`
                 twitter
             }
         }
-        heroPhoto: file(relativePath: { eq: "logo/banner_facebook.jpg" }) {
+        heroPhoto: file(relativePath: { eq: "logo/banner_preview.jpg" }) {
             childImageSharp {
-                fixed {
+                fluid {
                     src
                 }
             }

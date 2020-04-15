@@ -4,7 +4,7 @@ folder: "twinsdaddy"
 cover: "./main.jpeg"
 title: "트윈스대디"
 published: true
-tags: ["닭한마리칼국수", "숯불돼지불고기", "녹두전", "고등어구이", "김치류"]
+tags: ["차돌전골", "소고기국밥", "감자탕", "숯불불고기", "녹두전"]
 ---
 
 ## 주문

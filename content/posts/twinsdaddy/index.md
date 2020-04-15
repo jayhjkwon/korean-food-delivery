@@ -2,7 +2,7 @@
 path: "/twinsdaddy"
 folder: "twinsdaddy"
 cover: "./main.jpeg"
-title: "트윈스데디"
+title: "트윈스대디"
 published: true
 tags: ["닭한마리칼국수", "숯불돼지불고기", "녹두전", "고등어구이", "김치류"]
 ---

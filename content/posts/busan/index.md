@@ -23,8 +23,8 @@ tags: ["돼지국밥", "감자탕", "곱창전골", "오리백숙"]
 ---
 
 ## 픽업
-- Shop1, 589 Elizabeth St
-- Lunch 11:30Am - 3Pm | Dinner 5:30Pm - 10Pm
+- 179 queen st Melbourne 
+- 7days, 5pm to 3am 
 
 ---
 

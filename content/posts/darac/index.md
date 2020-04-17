@@ -10,7 +10,7 @@ tags: ["부대찌개", "치즈불닭", "순두부찌개", "냉면", "닭강정",
 
 ## 주문
 - 1) 매장으로 전화주세요  9662 2441 또는
-- 2)  <a href="https://www.k-eats.co" target="blank"> www.k-eats.co </a>에서 다락을 찾아주세요
+- 2)  <a href="https://store-q0u6t.mybigcommerce.com/darac/" target="blank"> www.k-eats.co </a>에서 다락을 찾아주세요
 
 ---
 

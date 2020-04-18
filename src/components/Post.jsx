@@ -94,7 +94,7 @@ const Title = styled.h2`
     margin-bottom: 0.6rem;
 `;
 
-const PostList = ({ dummy, cover, path, title, tags }) => {
+const Post = ({ dummy, cover, path, title, tags }) => {
     return (
         <Wrapper dummy={dummy}>
             {cover && (
@@ -114,9 +114,9 @@ const PostList = ({ dummy, cover, path, title, tags }) => {
     );
 };
 
-export default PostList;
+export default Post;
 
-PostList.propTypes = {
+Post.propTypes = {
     dummy: PropTypes.bool,
     cover: PropTypes.object,
     path: PropTypes.string,

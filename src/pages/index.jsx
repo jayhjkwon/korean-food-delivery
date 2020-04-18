@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
@@ -8,10 +9,12 @@ import { Layout } from 'layouts';
 
 export const query = graphql`
     query {
-        heroPhoto: file(relativePath: { eq: "logo/logo.png" }) {
+        kakaoBannerLarge: file(
+            relativePath: { eq: "kakao/banner_type@2x.png" }
+        ) {
             childImageSharp {
-                fixed(height: 50) {
-                    ...GatsbyImageSharpFixed_noBase64
+                fluid(maxWidth: 400, quality: 100) {
+                    ...GatsbyImageSharpFluid_noBase64
                 }
             }
         }
@@ -44,28 +47,34 @@ export const query = graphql`
 
 const PostWrapper = styled.div`
     max-width: ${props => props.theme.maxWidth};
-    margin: 5.4rem auto 1rem;
+    margin: 0rem auto 1rem;
+    padding: 0 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    @media (max-width: 1000px) {
-        margin: 1rem 2rem 1rem 2rem;
+    @media (min-width: 700px) {
+        ${'' /* margin: - auto; */}
     }
-    @media (max-width: 700px) {
-        margin: 1rem 1rem 1rem 1rem;
-    }
+`;
+
+const KakaoBannerWrapper = styled.div`
+    width: 100%;
+    padding: 0 1rem;
+    margin: 0 auto;
+    max-width: 400px;
 `;
 
 const Index = ({ data }) => {
     const {
-        heroPhoto,
+        kakaoBannerLarge,
         allMarkdownRemark: { edges },
     } = data;
+
     return (
         <Layout showLogo={false}>
             <Helmet title={'내일 뭐먹지'} />
-            <Header cover={heroPhoto.childImageSharp.fixed} />
+            <Header />
             <PostWrapper>
                 {edges.map(({ node }) => {
                     const { id, excerpt, frontmatter } = node;
@@ -85,6 +94,14 @@ const Index = ({ data }) => {
                 <PostList dummy />
                 <PostList dummy />
             </PostWrapper>
+            <KakaoBannerWrapper>
+                <a href="https://pf.kakao.com/_UHfrxb/friend" target="__blank">
+                    <Img
+                        fluid={kakaoBannerLarge.childImageSharp.fluid}
+                        alt="내일 뭐먹지 카카오톡 채널을 추가하세요"
+                    />
+                </a>
+            </KakaoBannerWrapper>
         </Layout>
     );
 };
@@ -93,7 +110,7 @@ export default Index;
 
 Index.propTypes = {
     data: PropTypes.shape({
-        heroPhoto: PropTypes.object,
+        kakaoBannerLarge: PropTypes.object,
         allMarkdownRemark: PropTypes.shape({
             edges: PropTypes.arrayOf(
                 PropTypes.shape({

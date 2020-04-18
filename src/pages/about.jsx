@@ -1,7 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { Header } from 'components';
 import { Layout, Container } from 'layouts';

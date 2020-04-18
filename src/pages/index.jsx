@@ -54,15 +54,17 @@ const PostWrapper = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
     @media (min-width: 700px) {
-        ${'' /* margin: - auto; */}
     }
 `;
 
 const KakaoBannerWrapper = styled.div`
     width: 100%;
-    padding: 0 1rem;
+    padding: 0rem 1rem 1rem 1rem;
     margin: 0 auto;
     max-width: 400px;
+    @media (min-width: 700px) {
+        padding: 6rem 1rem 1rem 1rem;
+    }
 `;
 
 const Index = ({ data }) => {

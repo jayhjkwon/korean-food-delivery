@@ -107,7 +107,7 @@ const Header = ({ title, showTitle = true }) => {
                         </Title>
                     ))}
             </Text>
-            <KakaoBanner
+            {/* <KakaoBanner
                 href="https://pf.kakao.com/_UHfrxb/friend"
                 target="__blank"
             >
@@ -119,7 +119,7 @@ const Header = ({ title, showTitle = true }) => {
                     새로운 메뉴, 할인 이벤트 정보를 카톡으로 편리하게
                     받아보세요.
                 </KakaoHelpText>
-            </KakaoBanner>
+            </KakaoBanner> */}
         </Wrapper>
     );
 };

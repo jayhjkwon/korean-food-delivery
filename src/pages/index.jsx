@@ -94,14 +94,14 @@ const Index = ({ data }) => {
                 <PostList dummy />
                 <PostList dummy />
             </PostWrapper>
-            <KakaoBannerWrapper>
+            {/* <KakaoBannerWrapper>
                 <a href="https://pf.kakao.com/_UHfrxb/friend" target="__blank">
                     <Img
                         fluid={kakaoBannerLarge.childImageSharp.fluid}
                         alt="내일 뭐먹지 카카오톡 채널을 추가하세요"
                     />
                 </a>
-            </KakaoBannerWrapper>
+            </KakaoBannerWrapper> */}
         </Layout>
     );
 };

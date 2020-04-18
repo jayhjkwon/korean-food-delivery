@@ -4,42 +4,54 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
-import { Header, PostList } from 'components';
+import { Header, Post } from 'components';
 import { Layout } from 'layouts';
 
 export const query = graphql`
+    fragment Posts on MarkdownRemarkEdge {
+        node {
+            id
+            excerpt(pruneLength: 75)
+            frontmatter {
+                title
+                path
+                tags
+                cover {
+                    childImageSharp {
+                        fluid(maxWidth: 1000, quality: 100) {
+                            ...GatsbyImageSharpFluid_withWebp
+                        }
+                    }
+                }
+            }
+        }
+    }
     query {
         kakaoBannerLarge: file(
             relativePath: { eq: "kakao/banner_type@2x.png" }
         ) {
             childImageSharp {
                 fluid(maxWidth: 400, quality: 100) {
-                    ...GatsbyImageSharpFluid_noBase64
+                    ...GatsbyImageSharpFluid_withWebp
                 }
             }
         }
-        allMarkdownRemark(
+        latestPosts: allMarkdownRemark(
+            limit: 3
+            sort: { order: DESC, fields: [frontmatter___cover___modifiedTime] }
+            filter: { frontmatter: { published: { eq: true } } }
+        ) {
+            edges {
+                ...Posts
+            }
+        }
+        allPosts: allMarkdownRemark(
             limit: 100
             sort: { order: ASC, fields: [frontmatter___title] }
             filter: { frontmatter: { published: { eq: true } } }
         ) {
             edges {
-                node {
-                    id
-                    excerpt(pruneLength: 75)
-                    frontmatter {
-                        title
-                        path
-                        tags
-                        cover {
-                            childImageSharp {
-                                fluid(maxWidth: 1000, quality: 100) {
-                                    ...GatsbyImageSharpFluid_noBase64
-                                }
-                            }
-                        }
-                    }
-                }
+                ...Posts
             }
         }
     }
@@ -47,14 +59,12 @@ export const query = graphql`
 
 const PostWrapper = styled.div`
     max-width: ${props => props.theme.maxWidth};
-    margin: 0rem auto 1rem;
+    margin: 0rem auto 3rem;
     padding: 0 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    @media (min-width: 700px) {
-    }
 `;
 
 const KakaoBannerWrapper = styled.div`
@@ -63,26 +73,40 @@ const KakaoBannerWrapper = styled.div`
     margin: 0 auto;
     max-width: 400px;
     @media (min-width: 700px) {
-        padding: 6rem 1rem 1rem 1rem;
+        padding: 2rem 1rem 1rem 1rem;
+    }
+`;
+
+const SectionTtitle = styled.h2`
+    max-width: ${props => props.theme.maxWidth};
+    margin: 0 auto 1.6rem;
+    padding: 0 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    @media (min-width: 700px) {
+        padding: 0 2rem;
+        font-size: 1.3rem;
     }
 `;
 
 const Index = ({ data }) => {
     const {
         kakaoBannerLarge,
-        allMarkdownRemark: { edges },
+        latestPosts: { edges: latestPostsEdges },
+        allPosts: { edges: allPostsEdges },
     } = data;
 
     return (
         <Layout showLogo={false}>
             <Helmet title={'내일 뭐먹지'} />
             <Header />
+            <SectionTtitle>최근 업데이트</SectionTtitle>
             <PostWrapper>
-                {edges.map(({ node }) => {
+                {latestPostsEdges.map(({ node }) => {
                     const { id, excerpt, frontmatter } = node;
                     const { cover, path, title, date, tags } = frontmatter;
                     return (
-                        <PostList
+                        <Post
                             key={id}
                             cover={cover.childImageSharp.fluid}
                             path={path}
@@ -93,8 +117,27 @@ const Index = ({ data }) => {
                         />
                     );
                 })}
-                <PostList dummy />
-                <PostList dummy />
+            </PostWrapper>
+
+            <SectionTtitle>전체 보기</SectionTtitle>
+            <PostWrapper>
+                {allPostsEdges.map(({ node }) => {
+                    const { id, excerpt, frontmatter } = node;
+                    const { cover, path, title, date, tags } = frontmatter;
+                    return (
+                        <Post
+                            key={id}
+                            cover={cover.childImageSharp.fluid}
+                            path={path}
+                            title={title}
+                            date={date}
+                            excerpt={excerpt}
+                            tags={tags}
+                        />
+                    );
+                })}
+                <Post dummy />
+                <Post dummy />
             </PostWrapper>
             <KakaoBannerWrapper>
                 <a href="https://pf.kakao.com/_UHfrxb/friend" target="__blank">
@@ -113,7 +156,22 @@ export default Index;
 Index.propTypes = {
     data: PropTypes.shape({
         kakaoBannerLarge: PropTypes.object,
-        allMarkdownRemark: PropTypes.shape({
+        latestPosts: PropTypes.shape({
+            edges: PropTypes.arrayOf(
+                PropTypes.shape({
+                    node: PropTypes.shape({
+                        excerpt: PropTypes.string,
+                        frontmatter: PropTypes.shape({
+                            cover: PropTypes.object.isRequired,
+                            path: PropTypes.string.isRequired,
+                            title: PropTypes.string.isRequired,
+                            tags: PropTypes.array,
+                        }),
+                    }),
+                }).isRequired
+            ),
+        }),
+        allPosts: PropTypes.shape({
             edges: PropTypes.arrayOf(
                 PropTypes.shape({
                     node: PropTypes.shape({

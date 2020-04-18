@@ -1,6 +1,6 @@
 import Header from './Header';
-import PostList from './PostList';
+import Post from './Post';
 import SEO from './SEO';
 import TagsBlock from './TagsBlock';
 
-export { Header, PostList, SEO, TagsBlock };
+export { Header, Post, SEO, TagsBlock };

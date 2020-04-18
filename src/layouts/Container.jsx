@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Wrapper = styled.section`
     text-align: ${props => (props.center ? 'center' : '')};
     margin: auto;
-    padding: 3rem 1rem;
+    padding: 1rem 1rem;
     width: 60%;
     max-width: ${props => props.theme.layout[props.type]};
     height: 100%;

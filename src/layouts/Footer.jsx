@@ -26,10 +26,6 @@ const Text = styled.div`
     a {
         color: ${props => props.theme.colors.white.light};
         margin: 0 2rem;
-
-        img {
-            ${'' /* margin-top: 5px; */}
-        }
     }
     span {
         color: #fff;
@@ -37,32 +33,11 @@ const Text = styled.div`
 `;
 
 const Footer = () => {
-    const data = useStaticQuery(graphql`
-        query {
-            logo: file(
-                relativePath: { eq: "github/GitHub-Mark-Light-32px.png" }
-            ) {
-                childImageSharp {
-                    fixed {
-                        ...GatsbyImageSharpFixed_noBase64
-                    }
-                }
-            }
-        }
-    `);
-    const logo = data.logo.childImageSharp.fixed;
     return (
         <Wrapper>
             <Container>
                 <Text>
                     <Link to="/about">포스팅 요청</Link>
-                    <span>|</span>
-                    <a
-                        href="https://github.com/jayhjkwon/korean-food-delivery"
-                        aria-label="Github"
-                    >
-                        <Img fixed={logo} alt="Korean Food Delivery Github" />
-                    </a>
                 </Text>
             </Container>
         </Wrapper>

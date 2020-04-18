@@ -21,6 +21,10 @@ export const query = graphql`
 const Content = styled.div`
     p {
         line-height: 1.7;
+        .mail {
+            color: ${props => props.theme.colors.link.base};
+            font-weight: 700;
+        }
     }
 `;
 
@@ -29,7 +33,12 @@ const About = ({ data }) => {
     return (
         <Layout showLogo={false}>
             <Helmet title={'About Korean Food Delivery'} />
-            <Header cover={heroPhoto.childImageSharp.fixed} showTitle={false} />
+            <a href="/">
+                <Header
+                    cover={heroPhoto.childImageSharp.fixed}
+                    showTitle={false}
+                />
+            </a>
             <Container>
                 <Content>
                     <p>
@@ -48,8 +57,10 @@ const About = ({ data }) => {
                     </p>
                     <p>
                         &quot;내일 뭐먹지?&quot;에 홍보를 하고자 하시는 분들은
-                        아래의 내용을 포함하여 info.kfood@gmail.com으로 이메일을
-                        보내주시면 가능한 빠른 시간내에 올려드리겠습니다.
+                        아래의 내용을 포함하여
+                        <span className="mail"> info.kfood@gmail.com </span>
+                        으로 이메일을 보내주시면 가능한 빠른 시간내에
+                        올려드리겠습니다.
                     </p>
                     <p>
                         기존의 포스트를 수정하실 분들은 간략히 변경된 부분만

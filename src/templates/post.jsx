@@ -18,8 +18,8 @@ export const query = graphql`
                 tags
                 cover {
                     childImageSharp {
-                        fluid(maxWidth: 1000, quality: 100) {
-                            ...GatsbyImageSharpFluid_noBase64
+                        fluid(maxWidth: 1000, quality: 90) {
+                            ...GatsbyImageSharpFluid_withWebp
                         }
                     }
                 }
@@ -34,8 +34,8 @@ export const query = graphql`
         ) {
             nodes {
                 childImageSharp {
-                    fluid(maxWidth: 1000, quality: 100) {
-                        ...GatsbyImageSharpFluid_noBase64
+                    fluid(maxWidth: 1000, quality: 90) {
+                        ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }

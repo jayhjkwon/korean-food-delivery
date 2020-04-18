@@ -6,18 +6,6 @@ import styled from '@emotion/styled';
 import { Header } from 'components';
 import { Layout, Container } from 'layouts';
 
-export const query = graphql`
-    query {
-        heroPhoto: file(relativePath: { eq: "logo/logo.png" }) {
-            childImageSharp {
-                fixed(height: 50) {
-                    ...GatsbyImageSharpFixed_noBase64
-                }
-            }
-        }
-    }
-`;
-
 const Content = styled.div`
     p {
         line-height: 1.7;
@@ -28,23 +16,17 @@ const Content = styled.div`
     }
 `;
 
-const About = ({ data }) => {
-    const { heroPhoto } = data;
+const About = () => {
     return (
         <Layout showLogo={false}>
             <Helmet title={'About Korean Food Delivery'} />
-            <a href="/">
-                <Header
-                    cover={heroPhoto.childImageSharp.fixed}
-                    showTitle={false}
-                />
-            </a>
+            <Header showTitle={false} />
             <Container>
                 <Content>
                     <p>
                         &quot;내일 뭐먹지?&quot;는 개인적으로 한국 음식을
                         배달시켜 먹을 때 마다 웹사이트, 카페, 소셜 미디어 등을
-                        여기저기 검색하는 불편을 줄여보려고 만든 웹사이트
+                        헤매며 여기저기 검색하는 불편을 줄여보려고 만든 웹사이트
                         입니다.
                     </p>
                     <p>
@@ -76,8 +58,8 @@ const About = ({ data }) => {
                         <li>연락처</li>
                         <li>배달 (지역, 시간 등등)</li>
                         <li>
-                            메인 메뉴 (모든 메뉴를 쓰시기 보다는 가급적 주로
-                            많이 판매하시는 메인 메뉴들만 보내주세요)
+                            주요 메뉴 (모든 메뉴를 쓰시기 보다는 가급적 주로
+                            많이 판매하시는 메뉴들만 보내주세요)
                         </li>
                         <li>음식 사진 (최대 10장)</li>
                     </ul>
@@ -88,7 +70,3 @@ const About = ({ data }) => {
 };
 
 export default About;
-
-About.propTypes = {
-    data: PropTypes.object,
-};

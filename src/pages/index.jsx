@@ -107,7 +107,7 @@ const Index = ({ data }) => {
         <Layout showLogo={false}>
             <Helmet title={'내일 뭐먹지'} />
             <Header />
-            <SectionTtitle>최근 업데이트</SectionTtitle>
+            {/* <SectionTtitle>최근 업데이트</SectionTtitle>
             <PostWrapper>
                 {latestPostsEdges.map(({ childMarkdownRemark }) => {
                     const { id, excerpt, frontmatter } = childMarkdownRemark;
@@ -125,8 +125,7 @@ const Index = ({ data }) => {
                     );
                 })}
             </PostWrapper>
-
-            <SectionTtitle>전체 보기</SectionTtitle>
+            <SectionTtitle>전체 보기</SectionTtitle> */}
             <PostWrapper>
                 {allPostsEdges.map(({ id, excerpt, frontmatter }) => {
                     const { cover, path, title, date, tags } = frontmatter;

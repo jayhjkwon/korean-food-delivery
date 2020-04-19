@@ -8,19 +8,17 @@ import { Header, Post } from 'components';
 import { Layout } from 'layouts';
 
 export const query = graphql`
-    fragment Posts on MarkdownRemarkEdge {
-        node {
-            id
-            excerpt(pruneLength: 75)
-            frontmatter {
-                title
-                path
-                tags
-                cover {
-                    childImageSharp {
-                        fluid(maxWidth: 1000, quality: 100) {
-                            ...GatsbyImageSharpFluid_withWebp
-                        }
+    fragment Post on MarkdownRemark {
+        id
+        excerpt(pruneLength: 75)
+        frontmatter {
+            title
+            path
+            tags
+            cover {
+                childImageSharp {
+                    fluid(maxWidth: 1000, quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
                     }
                 }
             }
@@ -36,13 +34,22 @@ export const query = graphql`
                 }
             }
         }
-        latestPosts: allMarkdownRemark(
+        latestPosts: allFile(
             limit: 3
-            sort: { order: DESC, fields: [frontmatter___cover___modifiedTime] }
-            filter: { frontmatter: { published: { eq: true } } }
+            sort: { order: DESC, fields: [modifiedTime] }
+            filter: {
+                childMarkdownRemark: {
+                    frontmatter: {
+                        published: { eq: true }
+                        title: { ne: null }
+                    }
+                }
+            }
         ) {
-            edges {
-                ...Posts
+            nodes {
+                childMarkdownRemark {
+                    ...Post
+                }
             }
         }
         allPosts: allMarkdownRemark(
@@ -50,8 +57,8 @@ export const query = graphql`
             sort: { order: ASC, fields: [frontmatter___title] }
             filter: { frontmatter: { published: { eq: true } } }
         ) {
-            edges {
-                ...Posts
+            nodes {
+                ...Post
             }
         }
     }
@@ -92,8 +99,8 @@ const SectionTtitle = styled.h2`
 const Index = ({ data }) => {
     const {
         kakaoBannerLarge,
-        latestPosts: { edges: latestPostsEdges },
-        allPosts: { edges: allPostsEdges },
+        latestPosts: { nodes: latestPostsEdges },
+        allPosts: { nodes: allPostsEdges },
     } = data;
 
     return (
@@ -102,8 +109,8 @@ const Index = ({ data }) => {
             <Header />
             <SectionTtitle>최근 업데이트</SectionTtitle>
             <PostWrapper>
-                {latestPostsEdges.map(({ node }) => {
-                    const { id, excerpt, frontmatter } = node;
+                {latestPostsEdges.map(({ childMarkdownRemark }) => {
+                    const { id, excerpt, frontmatter } = childMarkdownRemark;
                     const { cover, path, title, date, tags } = frontmatter;
                     return (
                         <Post
@@ -121,8 +128,7 @@ const Index = ({ data }) => {
 
             <SectionTtitle>전체 보기</SectionTtitle>
             <PostWrapper>
-                {allPostsEdges.map(({ node }) => {
-                    const { id, excerpt, frontmatter } = node;
+                {allPostsEdges.map(({ id, excerpt, frontmatter }) => {
                     const { cover, path, title, date, tags } = frontmatter;
                     return (
                         <Post
@@ -157,7 +163,7 @@ Index.propTypes = {
     data: PropTypes.shape({
         kakaoBannerLarge: PropTypes.object,
         latestPosts: PropTypes.shape({
-            edges: PropTypes.arrayOf(
+            nodes: PropTypes.arrayOf(
                 PropTypes.shape({
                     node: PropTypes.shape({
                         excerpt: PropTypes.string,
@@ -172,7 +178,7 @@ Index.propTypes = {
             ),
         }),
         allPosts: PropTypes.shape({
-            edges: PropTypes.arrayOf(
+            nodes: PropTypes.arrayOf(
                 PropTypes.shape({
                     node: PropTypes.shape({
                         excerpt: PropTypes.string,

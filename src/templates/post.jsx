@@ -33,6 +33,7 @@ export const query = graphql`
             }
         ) {
             nodes {
+                name
                 childImageSharp {
                     fluid(maxWidth: 1000, quality: 90) {
                         ...GatsbyImageSharpFluid_withWebp
@@ -87,11 +88,7 @@ const Post = ({ data }) => {
     const image = frontmatter.cover.childImageSharp.fluid;
     let images = [];
     if (data.images.nodes && data.images.nodes.length > 0) {
-        images = orderBy(
-            data.images.nodes,
-            ['childImageSharp.fluid.src'],
-            ['asc']
-        );
+        images = orderBy(data.images.nodes, ['name'], ['asc']);
     }
     images = [frontmatter.cover, ...images];
     return (

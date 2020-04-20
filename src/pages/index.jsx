@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
@@ -34,22 +34,13 @@ export const query = graphql`
                 }
             }
         }
-        latestPosts: allFile(
+        latestPosts: allMarkdownRemark(
             limit: 3
-            sort: { order: DESC, fields: [modifiedTime] }
-            filter: {
-                childMarkdownRemark: {
-                    frontmatter: {
-                        published: { eq: true }
-                        title: { ne: null }
-                    }
-                }
-            }
+            sort: { order: DESC, fields: [frontmatter___date] }
+            filter: { frontmatter: { published: { eq: true } } }
         ) {
             nodes {
-                childMarkdownRemark {
-                    ...Post
-                }
+                ...Post
             }
         }
         allPosts: allMarkdownRemark(
@@ -107,10 +98,9 @@ const Index = ({ data }) => {
         <Layout showLogo={false}>
             <Helmet title={'내일 뭐먹지'} />
             <Header />
-            {/* <SectionTtitle>최근 업데이트</SectionTtitle>
+            <SectionTtitle>최근 업데이트</SectionTtitle>
             <PostWrapper>
-                {latestPostsEdges.map(({ childMarkdownRemark }) => {
-                    const { id, excerpt, frontmatter } = childMarkdownRemark;
+                {latestPostsEdges.map(({ id, excerpt, frontmatter }) => {
                     const { cover, path, title, date, tags } = frontmatter;
                     return (
                         <Post
@@ -125,7 +115,7 @@ const Index = ({ data }) => {
                     );
                 })}
             </PostWrapper>
-            <SectionTtitle>전체 보기</SectionTtitle> */}
+            <SectionTtitle>전체 보기</SectionTtitle>
             <PostWrapper>
                 {allPostsEdges.map(({ id, excerpt, frontmatter }) => {
                     const { cover, path, title, date, tags } = frontmatter;

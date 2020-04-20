@@ -5,6 +5,7 @@ cover: "./main.jpeg"
 title: "치키리아"
 published: true
 tags: ["치킨", "갈릭치킨", "랩", "소불고기"] 
+date: "2020-04-10T15:20:00"
 ---
 
 ## 주문

@@ -5,6 +5,7 @@ cover: "./main.jpeg"
 title: "Qmeats & sushi"
 published: true
 tags: ["감자탕", "갈비찜", "고기", "생장어"]
+date: "2020-04-10T15:20:00"
 ---
 
 ## 주문

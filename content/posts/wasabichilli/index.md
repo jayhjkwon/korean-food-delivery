@@ -5,6 +5,7 @@ cover: "./main.jpg"
 title: "Wasabi & Chilli"
 published: true
 tags: ["모듬회", "회덮밥", "회무침", "매운탕"]
+date: "2020-04-10T15:20:00"
 ---
 
 ## 주문

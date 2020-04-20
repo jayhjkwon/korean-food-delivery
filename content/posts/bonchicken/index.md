@@ -5,6 +5,7 @@ cover: "./main.png"
 title: "본치킨"
 published: true
 tags: ["치킨"]
+date: "2020-04-10T15:20:00"
 ---
 
 ## 주문

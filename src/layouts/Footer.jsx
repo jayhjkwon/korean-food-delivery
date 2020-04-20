@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link, useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { Link } from 'gatsby';
 import { Container } from '../layouts';
 
 const Wrapper = styled.footer`

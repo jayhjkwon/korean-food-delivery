@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import orderBy from 'lodash/orderBy';
 import { Layout, Content } from 'layouts';
 import { TagsBlock, SEO } from 'components';
 import '../styles/prism';

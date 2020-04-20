@@ -26,6 +26,7 @@ export const query = graphql`
             }
         }
         images: allFile(
+            sort: { order: ASC, fields: [name] }
             filter: {
                 base: { regex: "/menu/" }
                 extension: { regex: "/(jpg)|(png)|(jpeg)/" }
@@ -85,12 +86,8 @@ const StyledImage = styled(Img)`
 const Post = ({ data }) => {
     const { html, frontmatter, excerpt } = data.markdownRemark;
     const { title, tags, path } = frontmatter;
-    const image = frontmatter.cover.childImageSharp.fluid;
-    let images = [];
-    if (data.images.nodes && data.images.nodes.length > 0) {
-        images = orderBy(data.images.nodes, ['name'], ['asc']);
-    }
-    images = [frontmatter.cover, ...images];
+    const heroImage = frontmatter.cover.childImageSharp.fluid;
+    const images = [frontmatter.cover, ...data.images.nodes];
     return (
         <Layout>
             <SEO
@@ -102,7 +99,7 @@ const Post = ({ data }) => {
             />
             <HeroImageContainer>
                 <HeroImageWrapper>
-                    <Img fluid={image} />
+                    <Img fluid={heroImage} />
                 </HeroImageWrapper>
             </HeroImageContainer>
             <Wrapper>

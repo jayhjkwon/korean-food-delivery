@@ -1,7 +1,7 @@
 ---
 path: "/orientable"
 folder: "orientable"
-cover: "./main.png"
+cover: "./main.jpg"
 title: "오리엔테이블 즉석솥밥반찬전문점"
 published: true
 tags: ["비빔밥", "반찬", "분식", "치킨", "칼국수"]

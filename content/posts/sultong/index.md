@@ -5,6 +5,7 @@ cover: "./main.jpg"
 title: "술통"
 published: true
 tags: ["회무침", "숙회무침", "모듬전", "보쌈", "치즈불닭"]
+date: "2020-04-10T15:20:00"
 ---
 
 ## 주문

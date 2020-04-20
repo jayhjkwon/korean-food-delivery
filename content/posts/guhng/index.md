@@ -5,6 +5,7 @@ cover: "./main.jpeg"
 title: "궁"
 published: true
 tags: ["곰탕", "육계장", "흑돼지"]
+date: "2020-04-10T15:20:00"
 ---
 
 ## 주문

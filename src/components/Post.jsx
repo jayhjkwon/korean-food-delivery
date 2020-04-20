@@ -106,7 +106,7 @@ const Post = ({ dummy, cover, path, title, tags }) => {
                 <StyledLink to={path}>
                     <Info>
                         <Title>{title}</Title>
-                        {tags && <div>{tags.join(', ')}</div>}
+                        {tags && <div>{tags.slice(0, 5).join(', ')}</div>}
                     </Info>
                 </StyledLink>
             )}

@@ -5,6 +5,7 @@ cover: "./main.jpg"
 title: "바베큐브라더스10"
 published: true
 tags: ["편갈비", "안심돈까스", "꼬리곰탕", "갈비탕"] 
+date: "2020-04-10T15:20:00"
 ---
 
 ## 주문

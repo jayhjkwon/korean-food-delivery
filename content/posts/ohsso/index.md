@@ -5,6 +5,7 @@ cover: "./main.jpeg"
 title: "오쏘 한식당"
 published: true
 tags: ["제육볶음", "김밥", "오징어 다리 튀김"]
+date: "2020-04-10T15:20:00"
 ---
 
 

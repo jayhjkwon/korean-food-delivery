@@ -5,6 +5,7 @@ cover: "./main.jpg"
 title: "돈텔마마"
 published: true
 tags: ["감자탕", "치킨", "짬뽕탕", "닭똥집", "부대찌개"]
+date: "2020-04-10T15:20:00"
 ---
 
 ## 주문

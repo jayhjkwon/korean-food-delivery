@@ -5,6 +5,7 @@ cover: "./main.jpg"
 title: "Cookit-Asiatte"
 published: true
 tags: ["반조리", "수제치킨까스" , "해물순두부", "치킨테리야키"]
+date: "2020-04-10T15:20:00"
 ---
 
 ## 주문

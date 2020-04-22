@@ -4,8 +4,8 @@ folder: "woori"
 cover: "./main.jpg"
 title: "우리"
 published: true
-tags: ['닭곰탕', '족발', '반찬', '돼지국밥']
-date: "2020-04-10T15:20:00"
+tags: ['사골곰탕', '족발', '반찬', '돼지국밥']
+date: "2020-04-22T22:20:00"
 ---
 
 ## 주문

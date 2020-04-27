@@ -4,8 +4,9 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
-import { Header, Post } from 'components';
-import { Layout } from 'layouts';
+import Header from '../components/Header';
+import Post from '../components/Post';
+import Layout from '../layouts/Layout';
 
 export const query = graphql`
     fragment Post on MarkdownRemark {

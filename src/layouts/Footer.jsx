@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
-import { Container } from '../layouts';
+import Container from '../layouts/Container';
 
 const Wrapper = styled.footer`
     margin: 8rem 0 0 0;

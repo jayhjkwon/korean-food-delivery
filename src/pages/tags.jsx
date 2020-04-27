@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Layout, Container } from 'layouts';
-import { Header, TagsBlock } from 'components';
+import Layout from 'layouts/Layout';
+import Container from 'layouts/Container';
+import Header from '../components/Header';
+import TagsBlock from '../components/TagsBlock';
 
 const Tags = ({ pageContext }) => {
     const { tags } = pageContext;

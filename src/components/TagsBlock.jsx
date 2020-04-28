@@ -10,20 +10,18 @@ const TagsContainer = styled.div`
     flex-wrap: wrap;
     justify-content: start;
     a {
-        margin: 0 1rem 1rem 0;
-        color: ${props => props.theme.colors.white.base};
-        padding: 0.3rem 0.6rem;
-        background: ${props => props.theme.colors.link.base};
-        border-radius: 15px;
+        margin: 0 0.75rem 0.75rem 0;
+        color: ${props => props.theme.colors.black.base};
+        padding: 0.5rem 1rem;
+        border-radius: 30px;
+        border: solid 1px ${props => props.theme.colors.black.second};
         &:hover {
-            color: ${props => props.theme.colors.white.light};
-            background: ${props => props.theme.colors.black.light};
-            border: ${props => props.theme.colors.black.light};
+            border-color: ${props => props.theme.colors.black.base};
         }
     }
 `;
 
-const TagsBlock = ({ list }) => (
+const TagsBlock = ({ list, renderMoreButton }) => (
     <TagsContainer>
         {list &&
             list.map(tag => {
@@ -34,6 +32,7 @@ const TagsBlock = ({ list }) => (
                     </Link>
                 );
             })}
+        {renderMoreButton && renderMoreButton()}
     </TagsContainer>
 );
 
@@ -41,4 +40,5 @@ export default TagsBlock;
 
 TagsBlock.propTypes = {
     list: PropTypes.array,
+    renderMoreButton: PropTypes.func,
 };

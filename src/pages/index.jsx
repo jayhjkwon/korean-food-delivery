@@ -4,8 +4,13 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
-import { Header, Post } from 'components';
-import { Layout } from 'layouts';
+import Header from '../components/Header';
+import Post from '../components/Post';
+import Layout from '../layouts/Layout';
+import TagsFilter from '../components/TagsFilter';
+import flatten from 'lodash/flatten';
+import countBy from 'lodash/countBy';
+import TagsBlock from '../components/TagsBlock';
 
 export const query = graphql`
     fragment Post on MarkdownRemark {
@@ -98,18 +103,17 @@ const Index = ({ data }) => {
         <Layout showLogo={false}>
             <Helmet title={'내일 뭐먹지'} />
             <Header />
+            <TagsFilter data={allPostsEdges} />
             <SectionTtitle>최근 업데이트</SectionTtitle>
             <PostWrapper>
-                {latestPostsEdges.map(({ id, excerpt, frontmatter }) => {
-                    const { cover, path, title, date, tags } = frontmatter;
+                {latestPostsEdges.map(({ id, frontmatter }) => {
+                    const { cover, path, title, tags } = frontmatter;
                     return (
                         <Post
                             key={id}
                             cover={cover.childImageSharp.fluid}
                             path={path}
                             title={title}
-                            date={date}
-                            excerpt={excerpt}
                             tags={tags}
                         />
                     );
@@ -117,16 +121,14 @@ const Index = ({ data }) => {
             </PostWrapper>
             <SectionTtitle>전체 보기</SectionTtitle>
             <PostWrapper>
-                {allPostsEdges.map(({ id, excerpt, frontmatter }) => {
-                    const { cover, path, title, date, tags } = frontmatter;
+                {allPostsEdges.map(({ id, frontmatter }) => {
+                    const { cover, path, title, tags } = frontmatter;
                     return (
                         <Post
                             key={id}
                             cover={cover.childImageSharp.fluid}
                             path={path}
                             title={title}
-                            date={date}
-                            excerpt={excerpt}
                             tags={tags}
                         />
                     );

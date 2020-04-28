@@ -1,8 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
-import { Header } from 'components';
-import { Layout, Container } from 'layouts';
+import Header from '../components/Header';
+import Layout from '../layouts/Layout';
+import Container from '../layouts/Container';
 
 const Content = styled.div`
     p {

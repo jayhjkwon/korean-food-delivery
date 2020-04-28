@@ -9,6 +9,7 @@ export const colors = {
         base: '#333438',
         light: '#4b4e57',
         blue: '#2e3246',
+        second: '#B0B0B0',
     },
     primary: {
         base: '#FF5A5F',

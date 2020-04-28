@@ -3,8 +3,10 @@ import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import { Layout, Content } from 'layouts';
-import { TagsBlock, SEO } from 'components';
+import Layout from 'layouts/Layout';
+import Content from 'layouts/Content';
+import SEO from '../components/SEO';
+import TagsBlock from '../components/TagsBlock';
 import '../styles/prism';
 
 export const query = graphql`

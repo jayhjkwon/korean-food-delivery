@@ -65,7 +65,12 @@ const KakaoHelpText = styled.p`
     margin: 0.5rem 0 0 0;
 `;
 
-const Header = ({ title, showTitle = true }) => {
+const Header = ({
+    title,
+    showTitle = true,
+    showKakaoBaner = true,
+    showLogo = true,
+}) => {
     const { logo, kakaoBannerSmall } = useStaticQuery(graphql`
         query {
             logo: file(relativePath: { eq: "logo/logo.png" }) {
@@ -88,11 +93,13 @@ const Header = ({ title, showTitle = true }) => {
     `);
     return (
         <Wrapper>
-            <CoverWrapper>
-                <Link to="/" alt="go to homepage">
-                    <Img fixed={logo.childImageSharp.fixed} />
-                </Link>
-            </CoverWrapper>
+            {showLogo && (
+                <CoverWrapper>
+                    <Link to="/" alt="go to homepage">
+                        <Img fixed={logo.childImageSharp.fixed} />
+                    </Link>
+                </CoverWrapper>
+            )}
             <Text>
                 {showTitle &&
                     (title || (
@@ -107,19 +114,21 @@ const Header = ({ title, showTitle = true }) => {
                         </Title>
                     ))}
             </Text>
-            <KakaoBanner
-                href="https://pf.kakao.com/_UHfrxb/friend"
-                target="__blank"
-            >
-                <Img
-                    fixed={kakaoBannerSmall.childImageSharp.fixed}
-                    alt="내일 뭐먹지 카카오톡 채널을 추가하세요"
-                />
-                <KakaoHelpText>
-                    새로운 메뉴, 할인 이벤트 정보를 카톡으로 편리하게
-                    받아보세요.
-                </KakaoHelpText>
-            </KakaoBanner>
+            {showKakaoBaner && (
+                <KakaoBanner
+                    href="https://pf.kakao.com/_UHfrxb/friend"
+                    target="__blank"
+                >
+                    <Img
+                        fixed={kakaoBannerSmall.childImageSharp.fixed}
+                        alt="내일 뭐먹지 카카오톡 채널을 추가하세요"
+                    />
+                    <KakaoHelpText>
+                        새로운 메뉴, 할인 이벤트 정보를 카톡으로 편리하게
+                        받아보세요.
+                    </KakaoHelpText>
+                </KakaoBanner>
+            )}
         </Wrapper>
     );
 };
@@ -134,6 +143,8 @@ Header.propTypes = {
         PropTypes.bool,
     ]),
     showTitle: PropTypes.bool,
+    showKakaoBaner: PropTypes.bool,
+    showLogo: PropTypes.bool,
 };
 
 Header.defaultProps = {

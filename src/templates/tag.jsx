@@ -1,50 +1,70 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import styled from '@emotion/styled';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import Layout from 'layouts/Layout';
-import Container from 'layouts/Container';
+import styled from '@emotion/styled';
 import Header from '../components/Header';
 import config from '../../config/site';
+import Post from '../components/Post';
 
-const StyledLink = styled(Link)`
-    color: ${props => props.theme.colors.white.light};
-    padding: 5px 10px;
-    border: solid 1px #fff;
-    border-radius: 20px;
-    &:hover {
-        color: ${props => props.theme.colors.black.blue};
-        background: ${props => props.theme.colors.white.light};
+export const query = graphql`
+    query($tagName: String!) {
+        allMarkdownRemark(
+            sort: { order: ASC, fields: [frontmatter___title] }
+            filter: { frontmatter: { tags: { glob: $tagName } } }
+        ) {
+            nodes {
+                frontmatter {
+                    path
+                    title
+                    tags
+                    cover {
+                        childImageSharp {
+                            fluid(maxWidth: 1000, quality: 100) {
+                                ...GatsbyImageSharpFluid_withWebp
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 `;
 
-const Information = styled.div`
-    text-align: center;
-    h1 {
-        font-size: 2rem;
-        margin-bottom: 1.25rem;
-    }
+const PostWrapper = styled.div`
+    max-width: ${props => props.theme.maxWidth};
+    margin: 0rem auto 3rem;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 `;
 
-const Tag = ({ pageContext }) => {
-    const { posts, tagName } = pageContext;
+const Tag = ({ data, pageContext: { tagName } }) => {
     const upperTag = tagName.charAt(0).toUpperCase() + tagName.slice(1);
+    const { nodes } = data.allMarkdownRemark;
     return (
         <Layout>
             <Helmet title={`${tagName} | ${config.siteTitle}`} />
-            <Header title={upperTag}>
-                <StyledLink to="/tags">All Tags</StyledLink>
-            </Header>
-            <Container>
-                <Information>
-                    {posts.map((post, index) => (
-                        <Link key={index} to={post.frontmatter.path}>
-                            <h3>{post.frontmatter.title}</h3>
-                        </Link>
-                    ))}
-                </Information>
-            </Container>
+            <Header title={upperTag} showKakaoBaner={false} showLogo={false} />
+            <PostWrapper>
+                {nodes.map(({ frontmatter }) => {
+                    const { cover, path, title, tags } = frontmatter;
+                    return (
+                        <Post
+                            key={path}
+                            cover={cover.childImageSharp.fluid}
+                            path={path}
+                            title={title}
+                            tags={tags}
+                        />
+                    );
+                })}
+                <Post dummy />
+                <Post dummy />
+            </PostWrapper>
         </Layout>
     );
 };
@@ -55,5 +75,22 @@ Tag.propTypes = {
     pageContext: PropTypes.shape({
         posts: PropTypes.array,
         tagName: PropTypes.string,
+    }),
+    data: PropTypes.shape({
+        allMarkdownRemark: PropTypes.shape({
+            nodes: PropTypes.arrayOf(
+                PropTypes.shape({
+                    node: PropTypes.shape({
+                        excerpt: PropTypes.string,
+                        frontmatter: PropTypes.shape({
+                            cover: PropTypes.object.isRequired,
+                            path: PropTypes.string.isRequired,
+                            title: PropTypes.string.isRequired,
+                            tags: PropTypes.array,
+                        }),
+                    }),
+                }).isRequired
+            ),
+        }),
     }),
 };

@@ -5,7 +5,7 @@ exports.createPages = ({ graphql, actions }) => {
 
     return new Promise((resolve, reject) => {
         const postTemplate = path.resolve('src/templates/post.jsx');
-        const tagPage = path.resolve('src/pages/tags.jsx');
+        const tagPage = path.resolve('src/templates/tags.jsx');
         const tagPosts = path.resolve('src/templates/tag.jsx');
 
         resolve(
@@ -18,6 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
                         ) {
                             edges {
                                 node {
+                                    id
                                     frontmatter {
                                         path
                                         title
@@ -51,6 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
                 });
 
                 const tags = Object.keys(postsByTag);
+                console.log('>>>> tags', tags);
 
                 createPage({
                     path: '/tags',

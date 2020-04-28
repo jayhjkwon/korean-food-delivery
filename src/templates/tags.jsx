@@ -5,9 +5,7 @@ import Container from 'layouts/Container';
 import Header from '../components/Header';
 import TagsBlock from '../components/TagsBlock';
 
-const Tags = ({ pageContext }) => {
-    const { tags } = pageContext;
-
+const Tags = ({ pageContext: { tags } }) => {
     return (
         <Layout>
             <Header title="Tags Page">Korean Food Delivery</Header>

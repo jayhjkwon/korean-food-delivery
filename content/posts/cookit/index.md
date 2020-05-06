@@ -12,6 +12,7 @@ date: "2020-04-10T15:20:00"
 - 전화, 카톡
 - 온라인 주문 
 https://docs.google.com/forms/d/e/1FAIpQLSddevIcwF3D6R7dhKJo-mL4abNxQURBnrYTl6OtM1_uAMyN7w/viewform
+- 웹사이트 주문: <a href="http://www.cookiteat.com.au" target="_blank">www.cookiteat.com.au</a>
 
 ---
 
@@ -20,6 +21,7 @@ https://docs.google.com/forms/d/e/1FAIpQLSddevIcwF3D6R7dhKJo-mL4abNxQURBnrYTl6Ot
 - 카톡: S3114047
 - 인스타그램: asiatte.eatery
 - 페이스북: asiatte
+- 웹사이트 : <a href="http://www.cookiteat.com.au" target="_blank">www.cookiteat.com.au</a>
 - 주소: 484 South Rd Moorabin
 
 ---

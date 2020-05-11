@@ -24,13 +24,14 @@ const Text = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 `;
 
 const Title = styled.h1`
+    text-align: left;
     margin: 4rem auto 0;
     line-height: 1.5;
-    max-width: 330px;
+    max-width: 350px;
     color: ${props => props.theme.colors.black.light};
     font-size: 0.8rem;
     @media (min-width: ${props => props.theme.breakpoints.m}) {
@@ -108,10 +109,8 @@ const Header = ({
                             모았습니다. 식당, 배달 정보 업로드를 원하시는
                             사장님께서는
                             <Link to="/about"> 여기를 참조</Link>해 주세요.
-                            <p>
-                                &quot;내일 뭐먹지&quot;는 자원봉사로 운영되는
-                                비영리 웹사이트 입니다.
-                            </p>
+                            &quot;내일 뭐먹지&quot;는 자원봉사로 운영되는{' '}
+                            <b>비영리 웹사이트</b> 입니다.
                         </Title>
                     ))}
             </Text>

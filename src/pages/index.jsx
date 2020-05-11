@@ -8,9 +8,6 @@ import Header from '../components/Header';
 import Post from '../components/Post';
 import Layout from '../layouts/Layout';
 import TagsFilter from '../components/TagsFilter';
-import flatten from 'lodash/flatten';
-import countBy from 'lodash/countBy';
-import TagsBlock from '../components/TagsBlock';
 
 export const query = graphql`
     fragment Post on MarkdownRemark {

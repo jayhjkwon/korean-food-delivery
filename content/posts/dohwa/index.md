@@ -4,8 +4,8 @@ folder: "dohwa"
 cover: "./main.jpg"
 title: "도화"
 published: true
-tags: ["짬뽕", "깐풍기", "짜장면", "고구마케익"]
-date: "2020-04-21T08:20:00"
+tags: ["짬뽕", "제육볶음", "고등어조림", "고구마케익"]
+date: "2020-05-11T08:20:00"
 ---
 
 ## 주문
@@ -25,14 +25,5 @@ date: "2020-04-21T08:20:00"
 - 수요일 : Glen waverley, Mount Waverley, Ashwood, Chadstone, Malvern, Clayton, Springvale, Noble park, Keysborough, Bentleigh
 - 목요일 : Wheelers Hill, Mulgrave, Rowville, Wantirna, Knoxfield, Boronia, Bayswater
 - 금요일 : Dandenone, Endeavour Hills, Narre Warren, Berwick, Cranbourne, Clayde
-- 토요일 : Williamstown, Point Cook, Altona, Laverton, Hoppers clossing, Weeribee 
-- 김치찜과 고구마케익이 시간이 좀 걸려서 주문은 선정지역 전날까지 주문주세요. 
-
----
-
-## 메뉴
-- 돼지고기 김치찜 1 백짬뽕1 소불고기1 고구마케익 $60
-- 백짬뽕2 소불고기2 고구마케익 $60
-- 돼지고기 김치찜1 백짬뽕2 소불고기 고구마케익 $70
-- 돼지고기 김치찜2 백짬뽕2 고구마케익 $80
-- 돼지고기 김치찜1 백짬뽕2 소불고기2 고구마케익 $80
+- 토요일 : Williamstown, Point Cook, Altona, Laverton, Hoppers clossing, Weeribee  
+ 

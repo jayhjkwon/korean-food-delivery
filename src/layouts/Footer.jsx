@@ -37,6 +37,9 @@ const Footer = () => {
             <Container>
                 <Text>
                     <Link to="/about">포스팅 요청</Link>
+                    <a href="https://github.com/jayhjkwon/korean-food-delivery">
+                        Github
+                    </a>
                 </Text>
             </Container>
         </Wrapper>

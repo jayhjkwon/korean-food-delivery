@@ -15,6 +15,14 @@ const Content = styled.div`
     }
 `;
 
+const Subtitle = styled.h2`
+    line-height: 1.5;
+    margin: 5rem 0 1.5rem 0;
+    &:first-of-type {
+        margin: 0 0 1.5rem 0;
+    }
+`;
+
 const About = () => {
     return (
         <Layout showLogo={false}>
@@ -22,6 +30,14 @@ const About = () => {
             <Header showTitle={false} />
             <Container>
                 <Content>
+                    <Subtitle>내일 뭐먹지?</Subtitle>
+                    <p>
+                        &quot;내일 뭐먹지?&quot;는 자원봉사로 운영되는{' '}
+                        <b>비영리 웹사이트</b>이며 소스 코드는 모두{' '}
+                        <a href="https://github.com/jayhjkwon/korean-food-delivery">
+                            공개되어 있습니다.
+                        </a>
+                    </p>
                     <p>
                         &quot;내일 뭐먹지?&quot;는 개인적으로 한국 음식을
                         배달시켜 먹을 때 마다 웹사이트, 카페, 소셜 미디어 등을
@@ -36,6 +52,9 @@ const About = () => {
                             😅
                         </span>
                     </p>
+                    <Subtitle>
+                        원하시는 식당/배달 정보를 누구나 업로드 하실수 있습니다
+                    </Subtitle>
                     <p>
                         &quot;내일 뭐먹지?&quot;에 홍보를 하고자 하시는 분들은
                         아래의 내용을 포함하여

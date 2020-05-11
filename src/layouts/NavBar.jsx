@@ -62,7 +62,7 @@ const NavBar = ({ showLogo = true }) => {
                     )}
                     <LinksWrapper>
                         <Link to="/">홈</Link>
-                        <Link to="/about">메뉴 업데이트</Link>
+                        <Link to="/about">안내</Link>
                     </LinksWrapper>
                 </Nav>
             </Wrapper>

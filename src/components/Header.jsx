@@ -62,7 +62,7 @@ const KakaoBanner = styled.a`
 const KakaoHelpText = styled.p`
     font-size: 0.8rem;
     color: ${props => props.theme.colors.black.light};
-    margin: 0.5rem 0 0 0;
+    margin: 0.5rem 1rem 0;
 `;
 
 const Header = ({
@@ -105,12 +105,13 @@ const Header = ({
                     (title || (
                         <Title>
                             여기저기 흩어져있는 배달 가능한 한국 식당들을 모두
-                            모았습니다.{' '}
-                            <Link to="/about">
-                                식당, 배달 정보 업로드를 원하시는 사장님께서는
-                                이곳을 클릭해서 참조해 주세요. 무료로 등록해
-                                드리고 있습니다.
-                            </Link>
+                            모았습니다. 식당, 배달 정보 업로드를 원하시는
+                            사장님께서는
+                            <Link to="/about"> 여기를 참조</Link>해 주세요.
+                            <p>
+                                &quot;내일 뭐먹지&quot;는 자원봉사로 운영되는
+                                비영리 웹사이트 입니다.
+                            </p>
                         </Title>
                     ))}
             </Text>

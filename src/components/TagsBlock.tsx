@@ -21,7 +21,12 @@ const TagsContainer = styled.div`
     }
 `;
 
-const TagsBlock = ({ list, renderMoreButton }) => (
+type Props = {
+    list: Array<string>;
+    renderMoreButton: () => React.ReactNode;
+};
+
+const TagsBlock = ({ list, renderMoreButton }: Props) => (
     <TagsContainer>
         {list &&
             list.map(tag => {
@@ -37,8 +42,3 @@ const TagsBlock = ({ list, renderMoreButton }) => (
 );
 
 export default TagsBlock;
-
-TagsBlock.propTypes = {
-    list: PropTypes.array,
-    renderMoreButton: PropTypes.func,
-};

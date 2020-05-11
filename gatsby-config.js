@@ -74,6 +74,7 @@ module.exports = {
                 icon: config.favicon,
             },
         },
+        'gatsby-plugin-typescript',
         // 'gatsby-plugin-offline',
     ],
 };

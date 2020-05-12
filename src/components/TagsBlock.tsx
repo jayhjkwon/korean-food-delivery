@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
+import type { ThemeType } from '../../config/theme';
 
-const TagsContainer = styled.div`
+const TagsContainer = styled.div<ThemeType>`
     margin: 1rem 0;
     display: flex;
     flex-direction: row;

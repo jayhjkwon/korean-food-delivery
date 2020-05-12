@@ -20,7 +20,8 @@
     "format:ts": "prettier --parser typescript --trailing-comma es5 --single-quote --write \"src/**/*.ts*\"",
     "lint-errors": "eslint src/**/*.{js,jsx} --quiet",
     "lint": "eslint src/**/*.{js,jsx}",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "ts": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/core": "^7.6.0",
@@ -58,6 +59,7 @@
     "react-typography": "^0.16.19",
     "typeface-candal": "0.0.54",
     "typeface-open-sans": "0.0.54",
+    "typescript": "^3.8.3",
     "typography": "^0.16.19"
   },
   "devDependencies": {

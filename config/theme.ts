@@ -1,3 +1,16 @@
+type ThemeType = {
+    theme: {
+        colors: {
+            black: {
+                base: string,
+                second: string
+            }
+        }
+    }
+};
+
+export { ThemeType };
+
 export const colors = {
     white: {
         base: '#fff',

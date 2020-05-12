@@ -1,6 +1,8 @@
 {
     "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
         "outDir": "./dist/",
+        "skipLibCheck": true,
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "commonjs",
@@ -9,6 +11,7 @@
         "lib": ["dom", "es2015", "es2017"]
     },
     "include": [
-        "./src/**/*"
+        "./src/**/*.tsx",
+        "./src/**/*.ts"
     ]
 }
